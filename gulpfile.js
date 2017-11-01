@@ -17,7 +17,7 @@ gulp.task('stylint', () =>
 		rules: {
 			"brackets": "always",
 			"colons": "always",
-			"commaSpace0": "always",
+			"commaSpace": "always",
 			"parenSpace": "never",
 			"quotePref", "double",
 			"semicolons": "always",
