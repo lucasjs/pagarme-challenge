@@ -10,19 +10,18 @@ gulp.task('html', () =>
 );
 
 gulp.task('stylint', () =>
-	gulp.src('./src/styles/*.styl')
+	gulp.src(['./src/styles/*.styl', './src/styles/**/*.styl'])
 	.pipe(stylint({
 		rules: {
 			"brackets": "always",
 			"colons": "always",
 			"commaSpace": "always",
 			"parenSpace": "never",
-			"quotePref", "double",
 			"semicolons": "always",
 			"sortOrder": "alphabetical"
 		}
 	}))
-	.pipe(stylint.reporter());
+	.pipe(stylint.reporter())
 );
 
 gulp.task('stylus', () =>
@@ -41,19 +40,19 @@ gulp.task('imagemin', () =>
 	.pipe(connect.reload())
 );
 
-gulp.task('watch', () =>
-	gulp.watch('.*.html', ['html'])
-	gulp.watch(['./src/styles/*.styl'], ['stylint', 'stylus'])
-	gulp.watch(['./src/js/*.js'], ['eslint'])	
-	gulp.watch(['./src/img/*.*'], ['imagemin'])	
-);
+gulp.task('watch', () => {
+	gulp.watch(['.*.html'],['html'])
+	gulp.watch(['./src/styles/*.styl', './src/**/*.styl'],['stylint', 'stylus'])
+	gulp.watch(['./src/js/*.js'],['eslint'])
+	gulp.watch(['./src/img/*.*'],['imagemin'])	
+});
 
 gulp.task('connect', () =>
 	connect.server({
 		root: './src/views',
 		livereload: true,
 		port: 8000
-	});
+	})
 );
 
 gulp.task('build', ['html', 'stylint', 'stylus', 'imagemin']);
