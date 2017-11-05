@@ -59,4 +59,4 @@ typings/
 
 # Compiled Files
 build/
-
+.publish/
