@@ -18,13 +18,13 @@
 		align-items: center;
 		display: flex;
 		
-		+breakpoint(tablet) {
-			margin-bottom: 20px;	
-		}
 		+breakpoint(mobile) {
 			flex-direction: column;
 			margin-bottom: 20px;
-		}
+		}		
+		+breakpoint(tablet) {
+			margin-bottom: 20px;	
+		}		
 	}	
 	&-h1 a {		
 		align-items: center;
@@ -41,7 +41,7 @@
 			border: none;	
 		}		
 		&:before {
-			background: url('/svg/logo.svg');
+			background: url('../svg/logo.svg');
 			background-size: 100%;
 			content: '';
 			display: inline-block;
@@ -88,7 +88,7 @@
 				outline: 1px solid $gray1;
 			}
 			+breakpoint(mobile) {	
-				width: auto;	
+				width: calc(100% - 150px);
 			}
 		}
 		&__button {	
@@ -112,7 +112,7 @@
 				outline: none;
 			}			
 			&:after {
-				background: url('/svg/envelope.svg') no-repeat center top 1px;
+				background: url('../svg/envelope.svg') no-repeat center top 1px;
 				background-size: 100%;
 				content: '';
 				display: inline-block;
@@ -125,22 +125,22 @@
 }
 .main {
 	&-banner {
-		background: $dark-gray1 url('/img/chamada-background.png') no-repeat center center;		
+		background: $dark-gray1 url('../img/chamada-background.png') no-repeat center center;		
 		background-size: 100%;
 		height: auto;
 		padding: 100px 115px;
 		transition ();
 		width: 100%;
 		
-		+breakpoint(mobile tablet) {
-			background-size: cover;
-			padding: 50px 20px;
-		}		
 		+breakpoint(desktop) {
 			&:focus,
 			&:hover {
 				background-size: 105%;	
 			}		
+		}		
+		+breakpoint(mobile tablet) {
+			background-size: cover;
+			padding: 50px 20px;
 		}
 		&__text {
 			padding: 0 130px;
@@ -213,9 +213,9 @@
 		padding: 0 115px;
 		width: 100%;
 		
-		+breakpoint(mobile) {	
-			grid-template-columns: 100%;
+		+breakpoint(mobile) {
 			grid-auto-rows: 265px;	
+			grid-template-columns: 100%;
 			padding: 0;
 		}
 		+breakpoint(tablet) {
@@ -226,7 +226,7 @@
 			position: relative;			
 
 			+breakpoint(desktop) {	
-				&:focus,			
+				&:focus,
 				&:hover {
 					&:before {
 						background: alpha($orange, 0.75);
@@ -253,7 +253,7 @@
 						top: 20px;
 						
 						&:after {						
-							background: url(/svg/eye-open.svg);
+							background: url('../svg/eye-open.svg');
 							background-size: 100%;
 							content: '';
 							display: inline-block;
@@ -332,7 +332,7 @@
 
 for postNum in (1..12) {		
 	.main-posts__post-{postNum} {
-		background: $dark-gray1 url('/img/post-thumb-' + postNum + '.jpg') no-repeat center center;	
+		background: $dark-gray1 url('../img/post-thumb-' + postNum + '.jpg') no-repeat center center;	
 		background-size: cover;
 	}
 }
