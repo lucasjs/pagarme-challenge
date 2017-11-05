@@ -35,6 +35,12 @@ gulp.task('stylus', () =>
 	.pipe(connect.reload())
 );
 
+gulp.task('svg', () =>
+	gulp.src('./src/svg/*.svg')
+	.pipe(gulp.dest('./build/svg'))
+	.pipe(connect.reload())
+);
+
 gulp.task('imagemin', () =>
 	gulp.src('./src/img/*')
 	.pipe(imagemin())
@@ -44,8 +50,9 @@ gulp.task('imagemin', () =>
 
 gulp.task('watch', () => {
 	gulp.watch(['./src/views/*.html'],['html'])
-	gulp.watch(['./src/styles/*.styl', './src/**/*.styl'],['stylint', 'stylus'])
+	gulp.watch(['./src/styles/*.styl', './src/styles/**/*.styl'],['stylint', 'stylus'])
 	gulp.watch(['./src/js/*.js'],['eslint'])
+	gulp.watch(['./src/svg/*.svg'],['svg'])	
 	gulp.watch(['./src/img/*.*'],['imagemin'])	
 });
 
@@ -57,11 +64,11 @@ gulp.task('connect', () =>
 	})
 );
 
-gulp.task('deploy', function() {
+gulp.task('ghPages', function() {
   return gulp.src('./build/**/*')
     .pipe(ghPages());
 });
 
-gulp.task('build', ['html', 'stylint', 'stylus', 'imagemin']);
+gulp.task('build', ['html', 'stylint', 'stylus', 'svg', 'imagemin']);
 gulp.task('server', ['connect', 'watch']);
-gulp.task('deploy', ['build', 'ghpages']);
+gulp.task('deploy', ['build', 'ghPages']);
