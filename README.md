@@ -45,6 +45,6 @@ $ gulp server
 
 ## Automatic Tasks
 
-- gulp build: Compile, concat and minify all files.
-- gulp server: Watch the files to build and start a static server.
-- gulp deploy: Deploy for gh-pages.
+- `gulp build:` Compile, concat and minify all files.
+- `gulp server:` Watch the files to build and start a static server.
+- `gulp deploy:` Deploy for gh-pages.
