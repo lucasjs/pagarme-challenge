@@ -6,7 +6,7 @@ const connect = require('gulp-connect');
 const ghPages = require('gulp-gh-pages');
 
 gulp.task('html', () =>
-	gulp.src('./*.html')
+	gulp.src('./src/views/*.html')
 	.pipe(gulp.dest('./build'))
 	.pipe(connect.reload())
 );
@@ -43,7 +43,7 @@ gulp.task('imagemin', () =>
 );
 
 gulp.task('watch', () => {
-	gulp.watch(['./*.html'],['html'])
+	gulp.watch(['./src/views/*.html'],['html'])
 	gulp.watch(['./src/styles/*.styl', './src/**/*.styl'],['stylint', 'stylus'])
 	gulp.watch(['./src/js/*.js'],['eslint'])
 	gulp.watch(['./src/img/*.*'],['imagemin'])	
@@ -51,7 +51,7 @@ gulp.task('watch', () => {
 
 gulp.task('connect', () =>
 	connect.server({
-		root: './src/views',
+		root: './build',
 		livereload: true,
 		port: 8000
 	})
