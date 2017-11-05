@@ -1,8 +1,7 @@
 {
-  "name": "teste-pagarme",
+  "name": "pagarme-challenge",
   "version": "1.0.0",
-  "description": "Teste Pagar.me",
-  "main": "index.js",
+  "description": "Pagar.me Challenge",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,9 +12,9 @@
   "author": "Lucas Silva",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/lucasjs/teste-pagarme/issues"
+    "url": "https://github.com/lucasjs/pagarme-challenge/issues"
   },
-  "homepage": "https://github.com/lucasjs/teste-pagarme#readme",
+  "homepage": "https://github.com/lucasjs/pagarme-challenge#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-connect": "^5.0.0",
