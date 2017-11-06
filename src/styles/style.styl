@@ -214,9 +214,14 @@
 		width: 100%;
 		
 		+breakpoint(mobile) {
-			grid-auto-rows: 265px;	
-			grid-template-columns: 100%;
+			display: block;
 			padding: 0;
+
+				&__post {
+				float: left;
+				height: 265px;
+				width: 100%;
+			}
 		}
 		+breakpoint(tablet) {
 			padding: 0;
